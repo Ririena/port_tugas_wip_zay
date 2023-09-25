@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compactible" content="IE-edge">
+  <title>Your Responsive Table</title>
+  <link rel="stylesheet" href="abouts.css">
+</head>
+<body>
+ <header>
+    <a href="#"class="logo">Duivion</a>
+
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a herf="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#contact">Contact</a> 
+    </nav>
+    <main>
+      <section id="photo">
+         <img src="zaychiku.png" width="200" height="200" style="border-radius: 50%;"/>
+         <h1>Zaychiku</h1>
+         <p>(Web Developer)</p>
+         <h3>Halo nama saya Adlin Qaidul Jaisy Dari X-RPL-2 Ini Adalah Sejarah <br> Saya Mempelajari Programming Lang</h2>
+      </section>
+ </main>
+ </div>
+ <div class="table-container">
+   <h2 class="table-heading">Table Pemrograman yang saya pelajari</h2>
+   <table>
+     <thead>
+       <tr>
+         <th>No</th>
+         <th>Bahasa</th>
+         <th>Penguasaan</th>
+         <th>Lama Belajar</th>
+       </tr>
+     </thead>
+
+     <tbody>
+       <tr>
+         <td data-heading="Programming Language">1</td>
+         <td data-heading="Designed by">HTML</td>
+         <td data-heading="Difficulty">Expert</td>
+         <td data-heading="LamaBelajar">2 Tahun</td>
+       </tr>
+
+       <tr>
+         <td data-heading="Programming Language">2</td>
+         <td data-heading="Designed by">CSS</td>
+         <td data-heading="Difficulty">Expert</td>
+         <td data-heading="LamaBelajar">2 Tahun</td>
+       </tr>
+
+       <tr>
+         <td data-heading="Programming Language">3</td>
+         <td data-heading="Designed by">JAVASCRIPT</td>
+         <td data-heading="Difficulty">Intermediate</td>
+         <td data-heading="LamaBelajar">1,6 Tahun</td>
+       </tr>
+       <tr>
+         <td data-heading="Programming Language">4</td>
+         <td data-heading="Designed by">React JS</td>
+         <td data-heading="Difficulty">Medium</td>
+         <td data-heading="LamaBelajar">8 Bulan</td>
+       </tr>
+       <tr>
+         <td data-heading="Programming Language">5</td>
+         <td data-heading="Designed by">Next JS</td>
+         <td data-heading="Difficulty">Junior</td>
+         <td data-heading="LamaBelajar">2 Bulan</td>
+       </tr>
+       <tr>
+         <td data-heading="Programming Language">6</td>
+         <td data-heading="Designed by">Bootstrap Framework</td>
+         <td data-heading="Difficulty">Experts</td>
+         <td data-heading="LamaBelajar">2 Tahun</td>
+       </tr>
+       <tr>
+         <td data-heading="Programming Language">7</td>
+         <td data-heading="Designed by">My SQL</td>
+         <td data-heading="Difficulty">Beginner</td>
+         <td data-heading="LamaBelajar">2 Bulan</td>
+       </tr>
+       <tr>
+         <td data-heading="Programming Language">8</td>
+         <td data-heading="Designed by">PHP</td>
+         <td data-heading="Difficulty">Beginner</td>
+         <td data-heading="LamaBelajar">2 Minggu</td>
+       </tr>
+     </tbody>
+   </table>
+ </div>
+ 
+ <script src="about.js">
+  
+
+ </script>
+ <script>
+     const toggleBtn = document.querySelector('.toggle_btn')
+     const toggleBtnIcon = document.querySelector('.toggle_btn i')
+     const dropdown_menu = document.querySelector('dropdown_menu')
+
+     toggleBtn.onclick = function () {
+         dropdown_menu.classList.toggle('open')
+         const isOpen = dropdown_menu.classList.contains('open')
+
+         toggleBtnIcon.classList = isOpen
+         ?'fa-solid fa-xmark'
+         :'fa-solid fa-bars'
+     }
+ </script>
+ </header>
+</body>
+</html>

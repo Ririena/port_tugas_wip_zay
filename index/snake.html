@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klasik Game1</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body style="background-color: aqua;">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <button id="resetButton">Reset Game</button>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const gridSize = 20;
+        const tileCount = canvas.width / gridSize;
+
+        let snake = [{ x: 10, y: 10 }];
+        let food = { x: 15, y: 10 };
+        let dx = 1;
+        let dy = 0;
+        let gameLoop;
+
+        function drawSnake() {
+            ctx.fillStyle = '#00f';
+            snake.forEach((segment) => {
+                ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+            });
+        }
+
+        function drawFood() {
+            ctx.fillStyle = '#f00';
+            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        }
+
+        function moveSnake() {
+            const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                food.x = Math.floor(Math.random() * tileCount);
+                food.y = Math.floor(Math.random() * tileCount);
+            } else {
+                snake.pop();
+            }
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function checkCollision() {
+            const head = snake[0];
+            return (
+                head.x < 0 || head.x >= tileCount ||
+                head.y < 0 || head.y >= tileCount ||
+                snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y)
+            );
+        }
+
+        function main() {
+            if (checkCollision()) {
+                clearInterval(gameLoop);
+                alert('Game Over!');
+                document.getElementById('resetButton').disabled = false;
+                return;
+            }
+
+            clearCanvas();
+            drawFood();
+            moveSnake();
+            drawSnake();
+        }
+
+        document.addEventListener('keydown', (event) => {
+            switch (event.key) {
+                case 'ArrowLeft':
+                    dx = -1; dy = 0;
+                    break;
+                case 'ArrowRight':
+                    dx = 1; dy = 0;
+                    break;
+                case 'ArrowUp':
+                    dx = 0; dy = -1;
+                    break;
+                case 'ArrowDown':
+                    dx = 0; dy = 1;
+                    break;
+            }
+        });
+
+        // Touch controls for mobile
+        let touchStartX, touchStartY;
+
+        canvas.addEventListener('touchstart', (event) => {
+            const touch = event.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+        });
+
+        canvas.addEventListener('touchmove', (event) => {
+            event.preventDefault();
+            const touch = event.touches[0];
+            const touchEndX = touch.clientX;
+            const touchEndY = touch.clientY;
+            const dx = touchEndX - touchStartX;
+            const dy = touchEndY - touchStartY;
+
+            if (Math.abs(dx) > Math.abs(dy)) {
+                // Horizontal swipe
+                if (dx > 0) {
+                    // Right swipe
+                    dx = 1; dy = 0;
+                } else {
+                    // Left swipe
+                    dx = -1; dy = 0;
+                }
+            } else {
+                // Vertical swipe
+                if (dy > 0) {
+                    // Down swipe
+                    dx = 0; dy = 1;
+                } else {
+                    // Up swipe
+                    dx = 0; dy = -1;
+                }
+            }
+        });
+
+        document.getElementById('resetButton').addEventListener('click', () => {
+            snake = [{ x: 10, y: 10 }];
+            food = { x: 15, y: 10 };
+            dx = 1;
+            dy = 0;
+            document.getElementById('resetButton').disabled = true;
+            gameLoop = setInterval(main, 100);
+        });
+
+        gameLoop = setInterval(main, 100);
+    </script>
+    <a href="classic.html">
+        <button>Back</button>
+    </a>
+</body>
+</html>
