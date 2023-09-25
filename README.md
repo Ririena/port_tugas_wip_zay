@@ -3,7 +3,7 @@
 - Saya Berencana memperbaiki semua halaman page ini dengan mengganti Native CSS dengan Tailwind CSS Framework
 
 
-## Apabila Kalian Me Running/Execution Kode Kalian Maka Hasilnya
+## Contact Me/Preview
 - Untuk lebih lanjut dm saya lewat discord, Nickname Saya -> (zaychikuy)
 - Saya bisa bantu untuk meresponsive port nya apabila kalian ingin menggunakan nya
 - Preview
