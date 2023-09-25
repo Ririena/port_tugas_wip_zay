@@ -1,7 +1,6 @@
 ## Port_Tugas_WIP(Lama)
-- Fungsi Dari Variable Serta Log Yang Ditampilkan Dalam Sebuah Website
-- Hasil Coding Kalian Pada Pertemuan1
-
+- Tugas Pembuatan Port Sederhana -> Irresponsive
+- Saya Berencana memperbaiki semua halaman page ini dengan mengganti Native CSS dengan Tailwind CSS Framework
 
 
 ## Apabila Kalian Me Running/Execution Kode Kalian Maka Hasilnya
@@ -15,6 +14,6 @@
 
 
 ## Trimss -Zay
-- Barangkali ingin coding bersama rekan rekan saya
+- Barangkali ingin coding bersama rekan rekan saya cuss
 - https://discord.gg/2hpZd99c
 
