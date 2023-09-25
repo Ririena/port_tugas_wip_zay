@@ -1,0 +1,215 @@
+/* Reset box-sizing and apply base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background-color: #313338;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 120px;
+  background: #11141a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+}
+
+ button {
+        color: #fbfcfd;
+        padding: 10px 25px;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+        align-items: center;
+         display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+    }
+
+nav a:hover,
+nav a.active {
+  color: #0ef;
+}
+
+section#photo {
+  height: calc(55vh - 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.section-content {
+  margin-bottom: 20px;
+  /* Add margin to separate from the table */
+}
+
+.table-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  /* Add margin to separate from other elements */
+  font-family: "Roboto", sans-serif;
+}
+
+.table-container h2.table-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 20px;
+  /* Add margin to separate from other elements */
+}
+
+.table-container table {
+  width: 100%;
+  background: #fff;
+  color: #222;
+  padding: 24px;
+  box-shadow: 0 4px 15px -8px rgba(0, 0, 0, 0.4);
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table in portrait mode */
+}
+
+.table-container table thead tr {
+  background: #222;
+  color: #fff;
+}
+
+.table-container table td,
+.table-container table th {
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.table-container table tr {
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .pic {
+    margin-bottom: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    /* Stack the navigation links */
+    margin-top: 20px;
+  }
+
+  nav a {
+    margin: 10px 0;
+    /* Add some spacing between the nav links */
+  }
+
+  /* Adjust the top padding for the about-us section on portrait mode */
+  .about-us {
+    padding-top: 130px;
+  }
+
+  .table-container {
+    width: 90%; /* Adjust width for landscape and portrait modes on smartphones */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    /* Add margin to separate from other elements */
+    font-family: "Roboto", sans-serif;
+  }
+
+  .table-container h2.table-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px; /* Adjust font size for landscape and portrait modes */
+    margin-bottom: 15px; /* Add margin to separate from other elements */
+  }
+
+  .table-container table {
+    width: 100%;
+    background: #fff;
+    color: #222;
+    padding: 12px; /* Adjust padding for landscape and portrait modes */
+    box-shadow: 0 4px 15px -8px rgba(0, 0, 0, 0.4);
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table in portrait mode */
+    overflow-x: auto; /* Add horizontal scroll for small screens */
+  }
+
+  .table-container table thead tr {
+    background: #222;
+    color: #fff;
+    font-size: 16px; /* Adjust font size for landscape and portrait modes */
+  }
+
+  .table-container table td,
+  .table-container table th {
+    padding: 10px 20px; /* Adjust padding for landscape and portrait modes */
+    font-size: 14px; /* Adjust font size for landscape and portrait modes */
+  }
+
+  section#photo {
+    /* Adjust text size to prevent overlapping */
+    font-size: 16px; /* Adjust font size for landscape and portrait modes */
+  }
+
+  .section-content {
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .table-container table th,
+  .table-container table td {
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .table-container h2.table-heading {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  section#photo h1 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  section#photo p {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    margin: 10px; /* Add margin to separate from other elements */
+  }
+}

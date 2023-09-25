@@ -1,0 +1,43 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.loading-screen {
+    background-color: #00f; /* Blue background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.loader {
+    border: 5px solid #fff;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.content {
+    padding: 20px;
+    display: none; /* Initially hide the content */
+}
+
+/* Show the content after the loading screen disappears */
+.loading-screen:not(:empty) + .content {
+    display: block;
+}

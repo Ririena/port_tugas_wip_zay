@@ -1,0 +1,176 @@
+/* Reset box-sizing and apply base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set up the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Styles for the about-us section */
+.about-us {
+  height: 100vh;
+  width: 100%;
+  padding: 90px 0;
+  background: #313338;
+}
+
+/* Header styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 120px;
+  background: #313338;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Logo and Navigation styles */
+.logo {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+}
+
+nav a:hover,
+nav a.active {
+  color: #0ef;
+}
+
+/* Container for the about section content */
+.about {
+  width: 100%;
+  max-width: 1130px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Image styles */
+.pic {
+  height: auto;
+  width: 302px;
+}
+
+/* Text content styles */
+.text {
+  width: 540px;
+}
+
+.text h2 {
+  font-size: 90px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text h5 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+span {
+  color: #4070f4;
+}
+
+.text p {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+/* Data styles */
+.data {
+  margin-top: 30px;
+}
+
+/* "Hire" button styles */
+.hire {
+  font-size: 18px;
+  background: #313338;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.hire:hover {
+  background: #000;
+  border: 1px solid #4070f4;
+}
+
+/* Additional styles for landscape mode (768px and above) */
+@media (min-width: 768px) {
+  body {
+    padding: 0 50px; /* Adjust the overall padding for landscape mode */
+  }
+}
+
+/* Additional styles for wider landscape mode (1024px and above) */
+@media (min-width: 1024px) {
+  body {
+    padding: 0 100px; /* Adjust the overall padding for wider landscape mode */
+  }
+}
+
+/* Additional styles for smaller screens (up to 767px) - Portrait mode */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .pic {
+    margin-bottom: 20px;
+  }
+
+  nav {
+    flex-direction: column; /* Stack the navigation links */
+    margin-top: 20px;
+  }
+
+  nav a {
+    margin: 10px 0; /* Add some spacing between the nav links */
+  }
+}
+
+/* Styling the side screen with background color */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd; /* Change this to the desired background color */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
